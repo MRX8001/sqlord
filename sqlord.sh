@@ -48,7 +48,7 @@ git clone https://github.com/sqlmapproject/sqlmap
 echo "Instalação concluida!"
 fi
 if [ "$opcao" = "2" ];then
-cd ..
+
 cd sqlmap
 clear
 figlet Sqlmap
