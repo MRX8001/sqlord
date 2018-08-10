@@ -3,6 +3,11 @@
 #Limpar a tela
 clear
 #
+#Escrever Lord Termux
+figlet Lord Termux
+sleep 4
+#Limpar a tela
+clear
 #Fazendo o programa dormir por 2 segundos
 sleep 2
 #
