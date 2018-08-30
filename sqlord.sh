@@ -11,17 +11,8 @@ clear
 #Fazendo o programa dormir por 2 segundos
 sleep 2
 #
-#BANNER
-echo
-echo "====================================="
-echo  "=                                 ="
-echo  "=        HACKING DE SITES         ="
-echo  "=           AUTOMATICO            ="
-echo  "=                                 ="
-echo  "=              2018               ="
-echo "====================================="
-echo
 #
+figlet Sqlord
 #
 #
 #MENU
