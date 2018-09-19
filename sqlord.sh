@@ -12,7 +12,7 @@ clear
 sleep 2
 #
 #
-figlet Sqlord
+figlet SQLord
 #
 #
 #MENU
