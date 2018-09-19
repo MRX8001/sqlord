@@ -17,15 +17,10 @@ figlet Sqlord
 #
 #MENU
 echo
-echo "===================================="
-echo "=                                  ="
-echo "= \033[1;34m[\033[1;31m1]>> \033[1;33mInstalar sqlmap"
-echo "= \033[1;34m[\033[1;31m2]>> \033[1;33mUsar sqlmap Automatico"
-echo "= \033[1;34m[\033[1;31m3]>> \033[1;33mInstalarDSSS"
-echo "= \033[1;34m[\033[1;31m4]>> \033[1;33mVer se o site é vulneravel"
-echo "=                                  ="
-echo "===================================="
-echo
+echo "\033[1;34m[\033[1;31m1]>> \033[1;33mInstalar sqlmap"
+echo "\033[1;34m[\033[1;31m2]>> \033[1;33mUsar sqlmap Automatico"
+echo "\033[1;34m[\033[1;31m3]>> \033[1;33mInstalarDSSS"
+echo "\033[1;34m[\033[1;31m4]>> \033[1;33mVer se o site é vulneravel"
 #
 #
 #Escolher entre as quatro opcoes
