@@ -17,10 +17,8 @@ figlet SQLord
 #
 #MENU
 echo
-echo "\033[1;34m[\033[1;31m1]>> \033[1;33mInstalar sqlmap"
-echo "\033[1;34m[\033[1;31m2]>> \033[1;33mUsar sqlmap Automatico"
-echo "\033[1;34m[\033[1;31m3]>> \033[1;33mInstalarDSSS"
-echo "\033[1;34m[\033[1;31m4]>> \033[1;33mVer se o site é vulneravel"
+echo "\033[1;34m[\033[1;31m1]>> \033[1;33mUsar sqlmap Automatico"
+echo "\033[1;34m[\033[1;31m2]>> \033[1;33mVer se o site é vulneravel"
 #
 #
 #Escolher entre as quatro opcoes
@@ -31,16 +29,9 @@ read -p "[+]=>" opcao
 #
 #
 if [ "$opcao" = "1" ];then
-clear
-figlet INSTALL
-#
- echo "Instalando sqlmap..."; sleep 2
-git clone https://github.com/sqlmapproject/sqlmap
-echo "Instalação concluida!"
-fi
-if [ "$opcao" = "2" ];then
 
-cd sqlmap
+if cd sqlmap
+then
 clear
 figlet Sqlmap
 #
@@ -73,15 +64,20 @@ read -p "[+]=> " coluna
 #
 #Extrai todo o trabalho feito
 python2 sqlmap.py -u $url --risk 2 --level 2 --batch -D $db -T $tabela -C $coluna  --dump
-fi
-if [ "$opcao" = "3" ];then
+
+else
+
 clear
-figlet Install
- echo "Instalando DSSS..."; sleep 2
-git clone https://github.com/stamparm/DSSS
-echo "Instalção concluida!"
+
+figlet Not Found
+sleep 3
+clear
+figlet Cloni  into
+
+       git clone https://github.com/sqlmapproject/sqlmap
 fi
-if [ "$opcao" = "4" ];then
+fi
+if [ "$opcao" = "2" ];then
 clear
 figlet DSSS
  echo "\033[1;36m[+]=> DIGITE OU COLE A URL DO SITE\033[1;31m"
@@ -92,8 +88,17 @@ read -p "[+]>>" url
 cd DSSS
 #Executando
 python2 dsss.py --url $url
+
+else
+
+clear
+figlet Not Found
+sleep 3
+clear
+figlet Cloni  Into
+              git clone https://github.com/stamparm/DSSS
 fi
-#
+fi
 #Fazendo o programa dormir por 2 segundo
 sleep 2
 #
